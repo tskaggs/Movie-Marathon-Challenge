@@ -20,7 +20,7 @@ module.exports = {
     // https://developers.facebook.com/docs/
     // https://developers.facebook.com/docs/reference/login/
     facebook: function (req, res) {
-        passport.authenticate('facebook', { failureRedirect: '/login', scope: ['email'] },
+        passport.authenticate('facebook', { failureRedirect: '/login', scope: ['email', 'user_friends'] },
             function (err, user) {
                 req.logIn(user, function (err) {
                     if (err) {
@@ -28,6 +28,9 @@ module.exports = {
                         res.view('500');
                         return;
                     }
+
+                    console.log('controller output for user: ');
+                    console.log(user);
 
                     res.redirect('/');
                     return;

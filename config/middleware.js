@@ -13,8 +13,12 @@ var verifyHandler = function (token, tokenSecret, profile, done) {
             }
         ).done(function (err, user) {
                 if (user) {
+                    console.log("1 user data show: ");
+                    console.log(profile);
                     return done(null, user);
                 } else {
+                    console.log("2 user data show: ");
+                    console.log(profile);
 
                     var data = {
                         provider: profile.provider,
