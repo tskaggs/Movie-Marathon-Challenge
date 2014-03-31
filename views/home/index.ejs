@@ -1,0 +1,15 @@
+<div>
+    <h1>Hi <%= user.name %>,</h1>
+    <p>You've successfully logged in.</p>
+    <a href="/logout">Logout</a>
+
+    <h2>User Model</h2>
+    <table>
+        <% for(key in user.toJSON() ) { %>
+        <tr>
+            <td><%= key %>: </td>
+            <td class="boxy"><%= user[key] %></td>
+        </tr>
+        <% } %>
+    </table>
+</div>

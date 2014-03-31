@@ -26,12 +26,26 @@ module.exports.routes = {
   // default view engine) your home page.
   // 
   // (Alternatively, remove this and add an `index.html` file in your `assets` directory)
-  '/': {
-    view: 'homepage'
-  },
+  // '/': {
+  //   view: 'homepage'
+  // },
 
 
   // Custom routes here...
+
+  '/' : {
+    controller : 'home'
+  },
+
+  '/login' : {
+    controller : 'auth',
+    action     : 'index'
+  },
+
+  '/logout' : {
+    controller : 'auth',
+    action     : 'logout'
+  }
 
 
   // If a request to a URL doesn't match any of the custom routes above, it is matched 

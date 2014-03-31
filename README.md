@@ -5,6 +5,9 @@ Movie Marathon Challenge
 
 * [Sails](http://sailsjs.org) application
 * [sails-mongo](https://github.com/balderdashy/sails-mongo)
+* [sails-mongo@beta](https://github.com/balderdashy/sails-mongo)
+* [passport](https://github.com/jaredhanson/passport)
+* [passport-facebook](https://github.com/jaredhanson/passport-facebook)
 
 ----
 

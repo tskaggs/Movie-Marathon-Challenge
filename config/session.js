@@ -16,14 +16,6 @@ module.exports.session = {
   // Replace at your own risk in production-- you will invalidate the cookies of your users,
   // forcing them to log in again. 
   secret: '50c0cf7a35d29bcd5aee124264837908',
-
-
-  // Set the session cookie expire time
-  // The maxAge is set by milliseconds, the example below is for 24 hours
-  //
-  // cookie: {
-  //   maxAge: 24 * 60 * 60 * 1000  
-  // }
   
 
   // In production, uncomment the following lines to set up a shared redis session store
@@ -43,12 +35,20 @@ module.exports.session = {
 
 
   // Uncomment the following lines to use your Mongo adapter as a session store
-  // adapter: 'mongo',
+  adapter: 'mongo',
+  
+  host: 'localhost',
+  port: 27017,
+  db: 'movie-marathon-challenge',
+  collection: 'sessions',
+
+  // Set the session cookie expire time
+  // The maxAge is set by milliseconds, the example below is for 24 hours
   //
-  // host: 'localhost',
-  // port: 27017,
-  // db: 'sails',
-  // collection: 'sessions',
+  cookie: {
+    maxAge: 24 * 60 * 60 * 1000  
+  }
+
   //
   // Optional Values:
   //
