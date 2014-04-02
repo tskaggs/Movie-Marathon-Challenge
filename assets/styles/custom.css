@@ -1,0 +1,11 @@
+#hollywood {
+	background: url(../images/hollywood_sm.png) #074e68;
+	height: 650px;
+	text-align: left;
+	position: relative;
+	padding: 100px 20px 0 20px;
+}
+
+.fb_pic {
+	width: 30px;
+}

@@ -36,6 +36,10 @@ var jsFilesToInject = [
   // to the Sails backend with some example code
   'js/connection.example.js',
 
+  'js/vendor/jquery.js',
+  'js/vendor/*.js',
+  'js/foundation/foundation.js',
+
   //
   // *->    you might put other dependencies like jQuery or Angular here   <-*
   //

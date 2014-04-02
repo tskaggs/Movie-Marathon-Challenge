@@ -1,8 +1,30 @@
-<div>
-    <h1>Hi <%= user.name %>,</h1>
-    <p>You've successfully logged in.</p>
-    <a href="/logout">Logout</a>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Movie Marathon Challenge</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+  </ul>
 
+  <section class="top-bar-section">
+    <ul class="right">
+        <li class="active"><a href="#" data-reveal-id="myModal" data-reveal><img class="fb_pic" src="//graph.facebook.com/<%= user.username %>/picture" /> <%= user.name %></a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+  </section>
+</nav>
+
+<div class="row">
+    <div data-alert class="alert-box success radius">
+      You've successfully logged in.
+      <a href="#" class="close">&times;</a>
+    </div>
+    <div class="small-12 large-12 columns">
+    </div>
+</div>
+
+<!---This is the User Model-->
+<div id="myModal" class="reveal-modal" data-reveal>
     <h2>User Model</h2>
     <table>
         <% for(key in user.toJSON() ) { %>
@@ -12,4 +34,5 @@
         </tr>
         <% } %>
     </table>
+  <a class="close-reveal-modal">&#215;</a>
 </div>
