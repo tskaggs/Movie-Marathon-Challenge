@@ -26,6 +26,11 @@ console.log('Connecting Socket.io to Sails.js...');
 // Attach a listener which fires when a connection is established:
 socket.on('connect', function socketConnected() {
 
+  // socket.get('/home/rottensearch', function (response) {
+  //   // response contains a list of all users
+  //   console.log('socket poopio');
+  //   console.log(response);
+  // });
 
   console.log(
     'Socket is now connected and globally accessible as `socket`.\n' +

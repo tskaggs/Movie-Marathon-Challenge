@@ -36,6 +36,7 @@ var jsFilesToInject = [
   // to the Sails backend with some example code
   'js/connection.example.js',
 
+  // Put jQuery and Foundation and other Vendor scripts before anyothers
   'js/vendor/jquery.js',
   'js/vendor/*.js',
   'js/foundation/foundation.js',

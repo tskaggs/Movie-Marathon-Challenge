@@ -13,18 +13,14 @@ var verifyHandler = function (token, tokenSecret, profile, done) {
             }
         ).done(function (err, user) {
                 if (user) {
-                    // console.log("1 user data show: ");
-                    // console.log(profile);
                     return done(null, user);
                 } else {
-                    console.log("2 user data show: ");
-                    console.log(profile);
-
                     var data = {
                         provider: profile.provider,
                         uid: profile.id,
                         name: profile.displayName,
-                        username: profile.username
+                        username: profile.username,
+                        token: token
                     };
 
                     if(profile.emails && profile.emails[0] && profile.emails[0].value) {
@@ -38,8 +34,8 @@ var verifyHandler = function (token, tokenSecret, profile, done) {
                     }
 
                     User.create(data).done(function (err, user) {
-                            return done(err, user);
-                        });
+                        return done(err, user);
+                    });
                 }
             });
     });

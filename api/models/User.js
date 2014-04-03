@@ -14,7 +14,8 @@ module.exports = {
         email: 'STRING',
         firstname: 'STRING',
         lastname: 'STRING',
-        username: 'STRING'
+        username: 'STRING',
+        token: 'STRING'
 	}
 
 };
