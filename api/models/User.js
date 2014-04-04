@@ -8,14 +8,19 @@
 module.exports = {
 
 	attributes: {
-		provider: 'STRING',
-        uid: 'INTEGER',
-        name: 'STRING',
-        email: 'STRING',
-        firstname: 'STRING',
-        lastname: 'STRING',
-        username: 'STRING',
-        token: 'STRING'
+                provider: 'STRING',
+                uid: 'INTEGER',
+                name: 'STRING',
+                email: 'STRING',
+                firstname: 'STRING',
+                lastname: 'STRING',
+                username: 'STRING',
+                token: 'STRING',
+                movielist: {
+                      collection: 'movietime',
+                      via: 'movielistBy',
+                      dominant: true
+                }
 	}
 
 };

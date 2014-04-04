@@ -1,0 +1,11 @@
+<form action="/movietime/create" method="POST" class="form-signin">
+	<div class="large-4 columns small-centered">
+		<h2 class="subheader text-center">Create Product</h2>
+		<input type="text" class="form-control" placeholder="friend" name="friend">
+		<input type="text" class="form-control" placeholder="time" name="time">
+		<input type="text" class="form-control" placeholder="movie" name="movie">
+
+		<input type="submit" class="small button expand" value="Create Movie Time" />
+		<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+	</div>
+</form>

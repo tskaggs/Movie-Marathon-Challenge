@@ -21,7 +21,7 @@ $( document ).ready(function() {
                   'Title: '+o.title +
                   '<br/>Year: '+o.year +
                   '<br/>Runtime: '+o.runtime +
-                  '<br /><input id="checkbox2" type="checkbox"><label for="checkbox2">Select</label>'+
+                  '<br /><input id="checkbox2" type="checkbox" name="movie" value="' +o.title + '"><label for="checkbox2">Select</label>'+
                   '</li>');
               });
           }

@@ -19,7 +19,14 @@ module.exports = {
 		    },
 		    two: function(callback){
         		callback(null, req.user);
-		    }
+		    },
+		    three: function(callback) {
+                Movietime.find()
+                	.where({owner: req.user.id})
+                 	.exec(function (err, response) {
+				        callback(null, response);
+				    });
+            }
 		},
 		function(err, results) {
 			res.view({
@@ -37,4 +44,14 @@ module.exports = {
 
 		});
 	},
+
+	create: function (req, res, next) {
+
+	  	Movietime.create( req.params.all(), function movietimeCreated (err, movietime) {
+	  		
+	  		if (err) return next(err);
+
+	  		res.redirect('/');
+	  	});
+  	},
 };

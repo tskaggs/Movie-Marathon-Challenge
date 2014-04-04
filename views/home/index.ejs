@@ -8,7 +8,7 @@
 
   <section class="top-bar-section">
     <ul class="right">
-        <li class="active"><a href="#" data-reveal-id="myModal" data-reveal><img class="fb_pic" src="//graph.facebook.com/<%= user.two.username %>/picture" /> <%= user.two.name %></a></li>
+        <li class="active"><a href="#" data-reveal-id="myModal" data-reveal><img class="fb_pic" src="//graph.facebook.com/<%= user.two.username %>/picture" /> <%= user.two.name %> <%= user.two.id %></a></li>
         <li><a href="/logout">Logout</a></li>
     </ul>
   </section>
@@ -22,21 +22,38 @@
     <div class="small-12 large-12 columns">
     </div>
 </div>
+<div class="row">
+  <div class="small-12 large-12 columns">
+    <h1>Your scheduled movie times!</h1>
+    <ul class="small-block-grid-4">
+    <% _.each(user.three, function (movielist) { %>
+      <li>
+        <div class="panel">
+        <p><%= movielist.friend %></p>
+        <p><%= movielist.time %></p>
+        <p><%= movielist.movie %></p>
+        </div>
+      </li>
+    <% }) %>
+    </ul>
+  </div>
+</div>
 
 <div class="row">
+  <form action="/movietime/create" method="POST" class="form-signin">
   <div class="small-12 large-12 columns">
     <h1>Select a friend or many!</h1>
     <ul class="small-block-grid-4 findfriend">
     <% _.each(user.one.data, function (friend) { %>
         <li><img class="th" src="//graph.facebook.com/<%= friend.id %>/picture" /><%= friend.name %>
         <br />
-        <input id="checkbox1" type="checkbox"><label for="checkbox1">Select</label></li>
+        <input id="checkbox1" type="checkbox" name="friend" value="<%= friend.name %>"><label for="checkbox1">Select</label></li>
       <% }) %>
     </ul>
     <hr />
 
     <h1>Select how many hours</h1>
-    <input type="text" placeholder="5... maybe 12?" /> Hours
+    <input type="text" placeholder="5... maybe 12?" name="time" /> Hours
     <hr />
 
     <h1>Select the movie</h1>
@@ -50,4 +67,12 @@
     </ul>
 
   </div>
+
+  <hr />
+
+  <input type="hidden" name="owner" value="<%= user.two.id %>" />
+
+  <input type="submit" class="small button expand" value="Create Movie Time" />
+  <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+  </form>
 </div>
